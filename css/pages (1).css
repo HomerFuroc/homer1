@@ -1,0 +1,81 @@
+/* Shared styles for inner pages */
+.wrap{
+  position:relative;z-index:3;flex:1;width:100%;max-width:1180px;margin:0 auto;
+  padding:30px clamp(20px,6vw,70px) 56px clamp(48px,6vw,70px);
+  display:flex;flex-direction:column;gap:30px;
+}
+.prompt{font:15px var(--mono);color:var(--cyan);text-shadow:0 0 12px rgba(34,211,238,.5);margin-bottom:8px}
+.title h1{
+  font-size:clamp(36px,6vw,72px);line-height:1.05;font-weight:700;letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--blue) 50%,var(--violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 20px rgba(79,140,255,.3));
+}
+.hl{color:#b9a8ff;font-weight:700}
+
+.split{display:grid;grid-template-columns:330px 1fr;gap:28px;align-items:start}
+
+/* ID card */
+.idcard{
+  position:relative;overflow:hidden;padding:18px;border-radius:20px;
+  border:1.5px solid rgba(34,211,238,.5);
+  background:linear-gradient(160deg,rgba(14,20,44,.92),rgba(18,12,44,.92));
+  box-shadow:0 0 40px rgba(79,140,255,.25);
+  transition:transform .3s,box-shadow .3s;
+}
+.idcard:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 0 60px rgba(34,211,238,.4)}
+.idcard::after{ /* light sweep on hover */
+  content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.12),transparent);transform:skewX(-20deg);
+}
+.idcard:hover::after{left:130%;transition:left .8s ease}
+.id-top{display:flex;justify-content:space-between;font:12px var(--mono);color:var(--muted);margin-bottom:14px}
+.id-live{display:inline-flex;align-items:center;gap:6px;color:#5eead4}
+.id-live i{width:7px;height:7px;border-radius:50%;background:#5eead4;box-shadow:0 0 8px #5eead4;animation:pulse 1.8s ease-in-out infinite}
+.idcard img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid rgba(139,92,246,.5);display:block}
+.idcard h2{font-size:22px;margin:16px 0 8px}
+.idcard dl>div{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px dashed rgba(139,92,246,.35);font-size:14px}
+.idcard dt{font:12px var(--mono);color:#a99bff;padding-top:2px}
+.idcard dd{text-align:right;font-weight:500}
+.barcode{
+  height:30px;margin-top:14px;opacity:.55;border-radius:3px;
+  background:repeating-linear-gradient(90deg,var(--text) 0 2px,transparent 2px 5px,var(--text) 5px 6px,transparent 6px 10px,var(--text) 10px 13px,transparent 13px 16px);
+}
+
+/* terminal */
+.term{
+  border-radius:16px;overflow:hidden;border:1px solid rgba(139,92,246,.45);
+  background:rgba(7,10,22,.88);box-shadow:0 0 36px rgba(139,92,246,.2);
+}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(20,26,54,.9);border-bottom:1px solid var(--line)}
+.d{width:12px;height:12px;border-radius:50%}
+.d.r{background:#ff5f57}.d.y{background:#febc2e}.d.g{background:#28c840}
+.term-title{margin-left:10px;font:13px var(--mono);color:var(--muted)}
+.term-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.75;color:#c3cbe6}
+.term-body p{max-width:64ch}
+.cmd{font:15px var(--mono);color:#5eead4}
+.cmd .caret{color:var(--cyan);animation:blink 1s steps(2) infinite}
+.files{font:15px var(--mono);color:#b9a8ff}
+
+/* tabs */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{
+  font:500 15px var(--font);color:var(--muted);cursor:pointer;
+  padding:10px 22px;border-radius:999px;background:rgba(12,16,34,.7);
+  border:1.5px solid rgba(139,92,246,.45);transition:color .2s,border-color .2s,box-shadow .2s;
+}
+.tabs button:hover{color:#fff;border-color:var(--cyan)}
+.tabs button[aria-selected="true"]{color:#fff;border-color:var(--cyan);background:rgba(34,211,238,.12);box-shadow:0 0 18px rgba(34,211,238,.4)}
+.panel{display:flex;flex-wrap:wrap;gap:12px}
+.panel[hidden]{display:none}
+.panel span{
+  padding:14px 22px;border-radius:12px;font-size:16px;
+  border:1px solid rgba(79,140,255,.4);background:rgba(10,14,30,.8);
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.panel span:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 0 18px rgba(34,211,238,.35)}
+
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .idcard{max-width:380px}
+}
