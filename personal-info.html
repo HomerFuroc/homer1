@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Information | Homer A. Furoc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="gutter" id="gutter" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="logo" href="index.html" aria-label="Homer Furoc home">homer<span class="cursor">_</span></a>
+    <nav aria-label="Main">
+      <a class="pill" href="index.html">Home</a>
+      <a class="pill active" href="personal-info.html" aria-current="page">Personal Information</a>
+      <a class="pill" href="achievements.html">Achievements</a>
+      <a class="pill" href="parents.html">Parents</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <aside class="page-head">
+      <p class="code-tag">&lt;about /&gt;</p>
+      <h1>Personal <span class="grad">Information</span></h1>
+      <p class="sub">A little more about who I am, what I enjoy, and what I bring to the table.</p>
+    </aside>
+
+    <div class="page-body">
+      <section class="intro">
+        <h2 class="h"><i>//</i> Here’s What You Should Know</h2>
+        <p>Hi, I’m <strong class="hl">Homer A. Furoc</strong>, a Bachelor of Science in Information Technology student at the University of the Cordilleras. I enjoy learning how technology works and using it to make things people can actually use.</p>
+        <p>I want to build websites and programs that look good and work well, and I’m always looking to learn something new.</p>
+      </section>
+
+      <section aria-labelledby="profile-h">
+        <h2 class="h" id="profile-h"><i>//</i> My Profile</h2>
+        <div class="tiles">
+          <div class="tile"><span>full name</span><b>Homer A. Furoc</b></div>
+          <div class="tile"><span>course</span><b>Bachelor of Science in Information Technology</b></div>
+          <div class="tile"><span>school</span><b>University of the Cordilleras</b></div>
+          <div class="tile"><span>birthday</span><b>June 13, 2008</b></div>
+        </div>
+      </section>
+
+      <div class="lists">
+        <section class="box">
+          <h2 class="h"><i>//</i> Interests</h2>
+          <ul>
+            <li>Web development</li>
+            <li>Programming</li>
+            <li>Technology and gadgets</li>
+            <li>Learning new things</li>
+          </ul>
+        </section>
+        <section class="box">
+          <h2 class="h"><i>//</i> Hobbies</h2>
+          <ul>
+            <li>Playing video games</li>
+            <li>Listening to music</li>
+            <li>Watching movies and series</li>
+            <li>Trying out new apps</li>
+          </ul>
+        </section>
+        <section class="box">
+          <h2 class="h"><i>//</i> Strengths</h2>
+          <ul>
+            <li>Quick learner</li>
+            <li>Problem solver</li>
+            <li>Hardworking</li>
+            <li>Team player</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">© 2026 Homer A. Furoc</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
