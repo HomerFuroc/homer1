@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Family &amp; Friends | Homer A. Furoc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/family-friends.css">
+</head>
+<body>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="gutter" id="gutter" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="logo" href="index.html" aria-label="Homer Furoc home">homer<span class="cursor">_</span></a>
+    <nav aria-label="Main">
+      <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="personal-info.html">Personal Information</a>
+      <a class="pill" href="achievements.html">Achievements</a>
+      <a class="pill active" href="family-friends.html" aria-current="page">Family &amp; Friends</a>
+    </nav>
+  </header>
+
+  <main class="page ff">
+    <div class="ff-head">
+      <div>
+        <p class="code-tag">&lt;people /&gt;</p>
+        <h1>Family <span class="grad">&amp; Friends</span></h1>
+      </div>
+      <p class="sub"><span class="d">The people who matter most to me. Click any picture to see it full size.</span><span class="m">Swipe to see more. Tap a photo to enlarge it.</span></p>
+    </div>
+
+    <!-- --ar is each photo's shape (width / height). If you add or remove a photo, change --sum in family-friends.css to the total of all the --ar values. -->
+    <div class="ff-grid" data-gallery>
+      <article class="ff-card" style="--ar:.62">
+        <button class="shot ff-shot" type="button" data-full="images/family-friends/mom-hug.jpg" data-cap="Mom hug">
+          <span class="ph">Mom hug<br>images/family-friends/mom-hug.jpg</span>
+          <img src="images/family-friends/mom-hug.jpg" alt="A hug with Mom" style="object-position:44% 40%" onerror="this.remove()">
+        </button>
+        <p class="ff-cap"><i>//</i> Mom hug</p>
+      </article>
+
+      <article class="ff-card" style="--ar:.60">
+        <button class="shot ff-shot" type="button" data-full="images/family-friends/dad-handshake.jpg" data-cap="Dad handshake">
+          <span class="ph">Dad handshake<br>images/family-friends/dad-handshake.jpg</span>
+          <img src="images/family-friends/dad-handshake.jpg" alt="A handshake with Dad" style="object-position:50% 30%" onerror="this.remove()">
+        </button>
+        <p class="ff-cap"><i>//</i> Dad handshake</p>
+      </article>
+
+      <article class="ff-card" style="--ar:1.15">
+        <button class="shot ff-shot" type="button" data-full="images/family-friends/siblings.jpg" data-cap="With my siblings">
+          <span class="ph">With my siblings<br>images/family-friends/siblings.jpg</span>
+          <img src="images/family-friends/siblings.jpg" alt="Group photo with my siblings" style="object-position:50% 40%" onerror="this.remove()">
+        </button>
+        <p class="ff-cap"><i>//</i> With my siblings</p>
+      </article>
+
+      <article class="ff-card" style="--ar:.62">
+        <button class="shot ff-shot" type="button" data-full="images/family-friends/friends.jpg" data-cap="With my friends">
+          <span class="ph">With my friends<br>images/family-friends/friends.jpg</span>
+          <img src="images/family-friends/friends.jpg" alt="Photo with my friends at graduation" style="object-position:50% 45%" onerror="this.remove()">
+        </button>
+        <p class="ff-cap"><i>//</i> With my friends</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">© 2026 Homer A. Furoc</footer>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
