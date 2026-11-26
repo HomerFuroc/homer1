@@ -1,0 +1,136 @@
+/* Shared styles for inner pages. Everything is sized with vh/vw so the page fits the screen without scrolling. */
+.page{
+  position:relative;z-index:3;flex:1;min-height:0;width:100%;max-width:1320px;margin:0 auto;
+  display:grid;grid-template-columns:clamp(190px,21vw,270px) minmax(0,1fr);grid-template-rows:minmax(0,1fr);
+  align-items:center;gap:clamp(16px,4vw,56px);
+  padding:clamp(6px,2vh,30px) clamp(20px,5vw,70px) clamp(6px,2vh,30px) clamp(48px,6vw,80px);
+}
+.page-head{align-self:center}
+.code-tag{font:clamp(11px,1.9vh,14px) var(--mono);color:var(--cyan);margin-bottom:8px;text-shadow:0 0 12px rgba(34,211,238,.5)}
+.page-head h1{font-size:clamp(24px,min(3.8vw,6.6vh),46px);line-height:1.08;font-weight:700;letter-spacing:-.02em}
+.grad{
+  background:linear-gradient(90deg,var(--cyan),var(--blue) 50%,var(--violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 16px rgba(79,140,255,.35));
+}
+.sub{color:var(--muted);font-size:clamp(12px,1.9vh,15px);line-height:1.55;margin-top:clamp(6px,1.6vh,14px)}
+
+.page-body{display:flex;flex-direction:column;gap:clamp(8px,2.4vh,30px);min-width:0;min-height:0}
+.h{font-size:clamp(13px,2.2vh,18px);font-weight:700;margin-bottom:clamp(6px,1.4vh,14px);display:flex;gap:8px;align-items:baseline}
+.h i{font:600 clamp(12px,2vh,16px) var(--mono);font-style:normal;color:var(--cyan)}
+.hl{color:#b9a8ff;font-weight:700}
+
+.intro{padding-bottom:clamp(8px,2vh,26px);border-bottom:1px solid var(--line)}
+.intro p{color:#c3cbe6;line-height:1.6;font-size:clamp(12px,2.1vh,17px)}
+.intro p + p{margin-top:clamp(5px,1vh,12px)}
+
+/* profile: two rows of tiles (3 wide ones, then 5 slim ones) */
+.tiles-wrap{display:flex;flex-direction:column;gap:clamp(6px,1.2vh,14px)}
+.tiles{display:grid;gap:clamp(8px,1.4vw,16px)}
+.tiles.r1{grid-template-columns:.9fr 1.9fr 1.2fr}
+.tiles.r2{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tile{
+  display:flex;flex-direction:column;gap:clamp(2px,.6vh,8px);padding:clamp(6px,1.3vh,14px) clamp(8px,1.1vw,16px);border-radius:14px;
+  background:rgba(10,14,30,.85);border:1px solid rgba(139,92,246,.35);
+  border-top:3px solid var(--cyan);box-shadow:0 0 22px rgba(79,140,255,.15);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.tile:nth-child(even){border-top-color:var(--violet)}
+.tile:hover{transform:translateY(-4px);box-shadow:0 0 28px rgba(34,211,238,.3);border-color:var(--cyan)}
+.tile span{font:clamp(10px,1.6vh,12px) var(--mono);color:#a99bff;letter-spacing:.04em}
+.tile b{font-weight:600;font-size:clamp(12px,2.1vh,17px);line-height:1.3}
+
+/* lists: each inside its own box */
+.lists{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.4vw,18px)}
+.box{padding:clamp(8px,1.8vh,20px);border-radius:16px;background:rgba(10,14,30,.7);border:1px solid rgba(79,140,255,.25)}
+.box ul{list-style:none;display:flex;flex-direction:column;gap:clamp(4px,1vh,10px)}
+.box li{
+  position:relative;padding:clamp(5px,1.2vh,12px) 10px clamp(5px,1.2vh,12px) clamp(22px,2.6vw,36px);
+  border-radius:10px;font-size:clamp(11px,1.9vh,15px);line-height:1.3;
+  border:1px solid rgba(139,92,246,.3);background:rgba(16,22,46,.8);
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+}
+.box li::before{
+  content:"";position:absolute;left:clamp(8px,1.2vw,15px);top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 8px var(--cyan);
+}
+.box li:hover{border-color:var(--cyan);box-shadow:0 0 16px rgba(34,211,238,.3);transform:translateX(3px)}
+
+@media (max-width:900px){
+  .page{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);align-items:start;align-content:center;
+        gap:clamp(6px,1.6dvh,14px);padding-inline:16px}
+  .page-head{align-self:start}
+  .sub{display:none}
+  .page-head h1{font-size:clamp(22px,min(7.5vw,4.6dvh),36px)}
+}
+@media (max-width:640px){
+  .box li{font-size:clamp(10px,2.9vw,12px);padding-left:18px;padding-right:6px}
+  .box li::before{left:7px;width:5px;height:5px;margin-top:-2.5px}
+  .box{padding:8px}
+}
+
+/* swipe hint: only shown where the profile tiles become a swipe strip */
+.hint{display:none}
+
+/* ---- Personal Information: slightly tighter spacing so the extra profile row still fits without scrolling ---- */
+.pi .page-body{gap:clamp(6px,1.8vh,24px)}
+.pi .intro{padding-bottom:clamp(6px,1.5vh,20px)}
+.pi .box{padding:clamp(7px,1.4vh,16px)}
+.pi .box ul{gap:clamp(3px,.8vh,8px)}
+.pi .box li{padding-top:clamp(4px,1vh,10px);padding-bottom:clamp(4px,1vh,10px)}
+
+/* ---- phones: profile tiles become one swipe strip, text scales with the screen height ---- */
+@media (max-width:640px), (max-height:520px) and (orientation:landscape){
+  .pi.page{gap:clamp(4px,1dvh,10px)}
+  .pi .page-body{gap:clamp(5px,1.3dvh,12px)}
+  .pi .h{font-size:clamp(13px,2.1dvh,16px);margin-bottom:clamp(4px,.9dvh,8px)}
+  .pi .intro{padding-bottom:clamp(5px,1.1dvh,12px)}
+  .pi .intro p{font-size:clamp(11px,min(3.3vw,1.85dvh),14px);line-height:1.5}
+  .pi .intro p + p{margin-top:4px}
+
+  .tiles-wrap{
+    flex-direction:row;gap:8px;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    margin:-4px 0;padding:4px 0;
+  }
+  .tiles-wrap::-webkit-scrollbar{display:none}
+  .hint{display:inline;margin-left:auto;font:400 10px var(--mono);color:var(--muted);letter-spacing:.04em}
+  .tiles{display:contents}
+  .tile{flex:none;width:clamp(112px,32vw,140px);scroll-snap-align:start;padding:clamp(5px,1dvh,9px) 10px;gap:2px}
+  .tiles.r1 .tile:nth-child(1){width:clamp(120px,36vw,150px)}
+  .tiles.r1 .tile:nth-child(2){width:clamp(190px,58vw,230px)}
+  .tiles.r1 .tile:nth-child(3){width:clamp(140px,42vw,170px)}
+  .tile span{font-size:10px}
+  .tile b{font-size:clamp(12px,1.9dvh,14px)}
+
+  .pi .lists{gap:6px}
+  .pi .box{padding:6px;border-radius:12px}
+  .pi .box .h{margin-bottom:5px}
+  .pi .box ul{gap:4px}
+  .pi .box li{font-size:clamp(10px,2.8vw,12px);padding-top:clamp(4px,.8dvh,7px);padding-bottom:clamp(4px,.8dvh,7px);padding-left:16px;padding-right:4px}
+  .pi .box li::before{left:6px}
+}
+
+/* small phones (short screens): a little extra compaction so nothing is cut off */
+@media (max-width:640px) and (max-height:700px) and (orientation:portrait){
+  .pi.page{padding-block:4px}
+  .pi .page-head h1{font-size:clamp(20px,3.9dvh,26px)}
+  .pi .code-tag{margin-bottom:2px}
+  .pi .intro p{font-size:11px;line-height:1.42}
+  .pi .box li{padding-top:3px;padding-bottom:3px}
+}
+
+/* phones held sideways: intro on the left, profile + lists on the right */
+@media (max-height:520px) and (orientation:landscape){
+  .pi.page{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);align-items:stretch;align-content:stretch;
+           padding:4px clamp(16px,4vw,40px)}
+  .pi .page-head{display:none}
+  .pi .page-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-rows:auto minmax(0,1fr);
+                 gap:6px 16px;align-content:center;height:auto}
+  .pi .intro{grid-column:1;grid-row:1 / span 2;align-self:center;border-bottom:0;padding-bottom:0}
+  .pi .intro p{font-size:clamp(10px,3.4dvh,13px)}
+  .pi .page-body > section[aria-labelledby]{grid-column:2;grid-row:1;min-width:0}
+  .pi .lists{grid-column:2;grid-row:2;align-self:start}
+  .pi .box li{font-size:clamp(9px,2.8dvh,11px);padding-top:3px;padding-bottom:3px}
+  .tile b{font-size:clamp(11px,3.3dvh,13px)}
+}
