@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Achievements | Homer A. Furoc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/achievements.css">
+</head>
+<body>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="gutter" id="gutter" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="logo" href="index.html" aria-label="Homer Furoc home">homer<span class="cursor">_</span></a>
+    <nav aria-label="Main">
+      <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="personal-info.html">Personal Information</a>
+      <a class="pill active" href="achievements.html" aria-current="page">Achievements</a>
+      <a class="pill" href="family-friends.html">Family &amp; Friends</a>
+    </nav>
+  </header>
+
+  <main class="page achievements-page">
+    <section class="page-head">
+      <p class="code-tag">&lt;awards /&gt;</p>
+      <h1>My <span class="grad">Achievements</span></h1>
+      <p class="sub">Awards, honors and certificates I’ve earned. Click any picture to see it full size.</p>
+    </section>
+
+    <div class="page-body achievements-columns">
+      <section class="panel school-panel" aria-labelledby="elementary-title">
+        <header class="school-heading">
+          <img src="images/logos/logo-elementary.png" alt="" width="128" height="128">
+          <span class="school-txt">
+            <small>elementary</small>
+            <b id="elementary-title">San Carlos Heights Elementary School</b>
+          </span>
+        </header>
+
+        <section class="acard" data-gallery>
+          <div class="acard-head">
+            <div>
+              <h2 class="h"><i>//</i> Elementary Awards</h2>
+              <p class="desc">Kindergarten recognition and Daily Vacation Bible School awards.</p>
+            </div>
+            <button class="expand" type="button" data-open="0">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              Expand
+            </button>
+          </div>
+          <div class="frame cols-1">
+            <button class="shot" type="button" data-full="images/achievements/elementary-awards.jpg" data-cap="Kindergarten awards: a Best in Math medal from the Recognition Program, School Year 2013–2014, and Daily Vacation Bible School (DVBS 2013, SeaQuest) awards for Most Behave, Most Attentive and Outstanding Student, given April 27, 2013.">
+              <img src="images/achievements/elementary-awards.jpg" alt="Kindergarten Best in Math medal and DVBS 2013 SeaQuest awards for Most Behave, Most Attentive and Outstanding Student" loading="lazy">
+            </button>
+            <span class="cap-chip">Elementary awards</span>
+          </div>
+        </section>
+      </section>
+
+      <section class="panel school-panel" aria-labelledby="highschool-title">
+        <header class="school-heading">
+          <img src="images/logos/logo-bcnshs.png" alt="" width="128" height="128">
+          <span class="school-txt">
+            <small>high school &amp; senior high</small>
+            <b id="highschool-title">Baguio City National Science High School</b>
+          </span>
+        </header>
+
+        <section class="acard wide" data-gallery>
+          <div class="acard-head">
+            <div>
+              <h2 class="h"><i>//</i> Academic Performance</h2>
+              <p class="desc">Academic records, grades, honors, and evidence of progress.</p>
+            </div>
+            <button class="expand" type="button" data-open="0">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              Expand
+            </button>
+          </div>
+          <div class="frame cols-3">
+            <button class="shot" type="button" data-full="images/achievements/academic-excellence-cert.jpg" data-cap="Certificate of Academic Excellence: General Average of 95% (With High Honors), Second Grading Period, 2025–2026. Given November 7, 2025.">
+              <img src="images/achievements/academic-excellence-cert.jpg" alt="Certificate of Academic Excellence, 95% with High Honors" loading="lazy">
+            </button>
+            <button class="shot" type="button" data-full="images/achievements/academic-excellence-honors.jpg" data-cap="Academic Excellence Award with Honors: outstanding academic performance, School Year 2025–2026. Given March 30, 2026.">
+              <img src="images/achievements/academic-excellence-honors.jpg" alt="Academic Excellence Award with Honors" loading="lazy">
+            </button>
+            <button class="shot" type="button" data-full="images/achievements/grades.jpg" data-cap="Grades, Grade 12: general average of 94 (first semester) and 95 (second semester).">
+              <img src="images/achievements/grades.jpg" alt="Grade 12 report on learning progress and achievement" loading="lazy">
+            </button>
+            <span class="cap-chip">Academic honors</span>
+          </div>
+        </section>
+
+        <div class="acards">
+          <section class="acard" data-gallery>
+            <div class="acard-head">
+              <div>
+                <h2 class="h"><i>//</i> Loyalty Award</h2>
+                <p class="desc">Recognized for loyalty and dedication as a student from 2020 to 2026.</p>
+              </div>
+              <button class="expand" type="button" data-open="0">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Expand
+              </button>
+            </div>
+            <div class="frame cols-2">
+              <button class="shot" type="button" data-full="images/achievements/loyalty-award.jpg" data-cap="Loyalty Award from Baguio City National Science High School, for loyalty and dedication as a student from 2020 to 2026. Given March 30, 2026.">
+                <img src="images/achievements/loyalty-award.jpg" alt="Loyalty Award certificate" loading="lazy">
+              </button>
+              <button class="shot" type="button" data-full="images/achievements/medals.jpg" data-cap="My medals, including the Loyalty Award medal.">
+                <img src="images/achievements/medals.jpg" alt="Medals including the Loyalty Award medal" loading="lazy">
+              </button>
+              <span class="cap-chip">Loyalty award</span>
+            </div>
+          </section>
+
+          <section class="acard" data-gallery>
+            <div class="acard-head">
+              <div>
+                <h2 class="h"><i>//</i> Work Immersion</h2>
+                <p class="desc">120 hours at the City Engineering Office, Baguio City.</p>
+              </div>
+              <button class="expand" type="button" data-open="0">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Expand
+              </button>
+            </div>
+            <div class="frame cols-1">
+              <button class="shot" type="button" data-full="images/achievements/certificate-completion.jpg" data-cap="Certificate of Completion: 120 hours of work immersion at the City Engineering Office, Baguio City, November 24 to December 16, 2025. Given January 16, 2026.">
+                <img src="images/achievements/certificate-completion.jpg" alt="Certificate of Completion for work immersion" loading="lazy">
+              </button>
+              <span class="cap-chip">Certificate of completion</span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">© 2026 Homer A. Furoc</footer>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
